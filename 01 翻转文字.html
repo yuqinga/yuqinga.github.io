@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            padding: 100px;
+            font: bold 8em "微软雅黑";
+            color: #369;
+        }
+        
+        .flip {
+            position: relative;
+        }
+        
+        .flip:before,
+        .flip:after {
+            content: attr(data-con);
+            /*让我们的before 和after  获取 data-con 的值*/
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: left;
+            /*设置中心点*/
+            transition: all 0.2s ease-in 0s;
+        }
+        
+        .flip::after
+        /*上层的白色*/
+        
+        {
+            color: #fff;
+            transform: scale(0.95, 1);
+        }
+        
+        .flip:hover::after {
+            transform: rotateY(-40deg) skew(0deg, 5deg);
+        }
+        
+        .flip::before {
+            /*底层半透明*/
+            color: rgba(0, 0, 0, 0.4);
+            transform: scale(1.05, 1);
+        }
+        
+        .flip:hover::before {
+            transform: rotateY(-40deg) skew(0deg, 15deg) scale(1.1, 1);
+        }
+    </style>
+</head>
+
+<body>
+    <span class="flip" data-con="我">我</span>
+    <span class="flip" data-con="爱">爱</span>
+    <span class="flip" data-con="我">我</span>
+    <span class="flip" data-con="家">家</span>
+</body>
+
+</html>
