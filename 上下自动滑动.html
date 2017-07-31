@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul{
+        list-style: none;
+    }
+   .mybox{
+       width:100%;
+       height: 80px;
+       background: pink;
+       display: flex;
+       overflow: hidden;
+   }
+   .myle{
+       width: 80px;
+       height: 80px;
+       background: red;
+
+   }
+   img{
+       width: 35px;
+       height: 35px;
+       margin-left: 10px;
+       margin-top: 2px;
+   }
+   .myul{
+    translate:all 1s;
+   }
+    @keyframes dong {
+        from{
+            transform: translateY(0px);
+        }
+        to{
+            transform: translateY(-80px);
+        }
+    }
+
+</style>
+<body>
+
+<div class="mybox">
+    <div class="myle">
+
+    </div>
+    <div>
+        <ul class="myul">
+            <li>
+                <p><img src="img/1.jpg" alt=""/><a href="#">连接1</a></p>
+                <p><img src="img/2.jpg" alt=""/><a href="#">连接1</a></p>
+            </li>
+            <li>
+                <p><img src="img/2.jpg" alt=""/><a href="#">连接2</a></p>
+                <p><img src="img/1.jpg" alt=""/><a href="#">连接2</a></p>
+            </li>
+            <li>
+                <p><img src="img/1.jpg" alt=""/><a href="#">连接3</a></p>
+                <p><img src="img/2.jpg" alt=""/><a href="#">连接3</a></p>
+            </li>
+            <li>
+                <p><img src="img/2.jpg" alt=""/><a href="#">连接4</a></p>
+                <p><img src="img/1.jpg" alt=""/><a href="#">连接4</a></p>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<script src="lib/node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+    $(function(){
+        var lis=$('li').length;
+        console.log(lis);
+        var height=$('.myul').width();
+        console.log(height);
+
+        var index=0;
+
+        var timer = setInterval(function(){
+
+            if (index==lis) {
+                index=0;
+                $('.myul li').eq(index).slideDown().siblings().slideUp();
+            }else {
+
+                $('.myul li').eq(index).slideDown().siblings().slideUp();
+
+            }
+            index++;
+        },2000);
+
+
+
+
+//        var itmer=setInterval(function(){
+//            index++
+//            if (index==lisw){
+//                index=0
+//            }
+//            console.log((height*index));
+//            console.log(index);
+//            $('.li').eq(index).show().siblings().hide();
+//
+//
+//        },1000)
+//        var itmer=setInterval(function(){
+//
+//            index++;
+//                $('.myul').animate({
+//                    'margin-top':-(index*height)+'px'
+//                },2000);
+//        },1000);
+//        if (index==lis)clearInterval(itmer);
+
+
+    })
+</script>
