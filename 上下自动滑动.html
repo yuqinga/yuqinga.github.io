@@ -78,50 +78,5 @@
 </html>
 <script src="lib/node_modules/jquery/dist/jquery.min.js"></script>
 <script>
-    $(function(){
-        var lis=$('li').length;
-        console.log(lis);
-        var height=$('.myul').width();
-        console.log(height);
-
-        var index=0;
-
-        var timer = setInterval(function(){
-
-            if (index==lis) {
-                index=0;
-                $('.myul li').eq(index).slideDown().siblings().slideUp();
-            }else {
-
-                $('.myul li').eq(index).slideDown().siblings().slideUp();
-
-            }
-            index++;
-        },2000);
-
-
-
-
-//        var itmer=setInterval(function(){
-//            index++
-//            if (index==lisw){
-//                index=0
-//            }
-//            console.log((height*index));
-//            console.log(index);
-//            $('.li').eq(index).show().siblings().hide();
-//
-//
-//        },1000)
-//        var itmer=setInterval(function(){
-//
-//            index++;
-//                $('.myul').animate({
-//                    'margin-top':-(index*height)+'px'
-//                },2000);
-//        },1000);
-//        if (index==lis)clearInterval(itmer);
-
-
-    })
+ 
 </script>
